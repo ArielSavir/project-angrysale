@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- title -->
+    <title>AngrySale</title>
+    <!-- Imports -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<style>
+/* Slick Carusel */
+    /* buttons */
+    .slick-dots {
+        position: relative;
+        top: -225px;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 1rem 0;
+        list-style-type: none;
+        z-index: 10000;
+    }
+    .slick-dots li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+    }
+    .slick-dots li button {
+        border: 0;
+        background: transparent;
+        display: block;
+        height: 20px;
+        width: 20px;
+        outline: none;
+        line-height: 0;
+        font-size: 0;
+        color: transparent;
+        padding: 5px;
+        cursor: pointer;
+        position: relative;
+        top: -1px;
+        left: -1px;
+        height: 11px;
+        width: 11px;
+        background: #E8E8E8;
+        border-radius: 50%;
+        z-index: 1114;
+    }
+    .slick-dots li button:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        font-family: "slick";
+        font-size: 6px;
+        line-height: 5px;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .slick-dots li.slick-active button {
+        background: #C2252C;
+    }
+    .slick-dots li.slick-active button:before {
+        position: absolute;
+        top: -8.5px;
+        right: -8.5px;
+        border-radius: 50%;
+        width: 9px;
+        height: 9px;
+        padding: 8px;
+        border: 1px solid #C2252C;
+        text-align: center;
+        font: 32px Arial, sans-serif;
+    }
+    /* Ad on top the carusel */
+    .card1 {
+        background: #F4F4F4E5;
+        position: absolute;
+        height: 576px;
+        width: 494px;
+        top: 8px;
+        left: 163px;
+        opacity: 90%;
+        z-index: 1111;
+    }
+    .innercard1 {
+        height: 209.35px;
+        margin-top: 62.5px;
+        margin-left: 60px;
+        font-family: 'Poppins';
+        font-weight: 700;
+        font: bold;
+        font-size: 56px;
+        line-height: 67.2px;
+    }
+    .text1 {
+        Font-family: 'Poppins';
+        font: normal;
+        Font-size: 20px;
+        Line-height: 30px;
+        margin-top: 16px;
+        size: 20px;
+        font-weight: 400;
+    }
+    .btn1 {
+        position: absolute;
+        top: 442.85px;
+        left: 163px;
+        height: 70px;
+        width: 374px;
+        padding: 20px, 40px, 20px, 40px;
+        background: #C2252C;
+        color: white;
+        box-shadow: 10px 10px 0px #F3D3D5;
+        z-index: 1112;
+        padding: 0;
+        margin: 0;
+        margin-left: 60px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    /* Carusel image text box */
+    .imgText1 {
+        background: #F4F4F4E5;
+        position: relative;
+        height: 148px;
+        width: 294px;
+        top: -178px;
+        left: 610px;
+        opacity: 90%;
+        z-index: 1111;
+    }
+    .imgTextHead1 {
+        margin-top: 10px;
+        margin-right: 22px;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 29.2px;
+    }
+    .imgTextBody {
+        margin-top: 5px;
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20.16px;
+    }
+    .imgTextPrice {
+        margin-top: 25px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: #C2252C;
+        line-height: 30px;
+    }
+    .innerbox1 {
+        margin-top: 10px;
+        margin-left: 22px;
+    }
+    .material-symbols-outlined {
+        margin-top: 8px;
+        margin-left: 138.41px;
+    }
+
+    /* Deals title */
+    .deals {
+        position: absolute;
+        width: 276px;
+        height: 34px;
+        left: calc(50% - 276px/2);
+        top: 676px;
+        font-family: 'Poppins';
+        font: medium;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 120%;
+        text-align: center;
+        color: #000000;
+    }
+
+    /* Deal cards */
+    .dealCards {
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        display: flex;
+        top: 774px;
+        left: 0px;
+    }
+    .homeCard {
+        width: 411px;
+        height: 292px;
+        background: url(img4.png);
+    }
+    .cardFull {
+        height: 354px;
+
+    }
+    .jewleryCard {
+        width: 237px;
+        height: 292px;
+        margin-left: 20px;
+        background: url(img7.png);
+    }
+    .lifestyleCard {
+        width: 410px;
+        height: 292px;
+        margin-left: 20px;
+        background: url(img6.png);
+    }
+    .kidsCard {
+        width: 237px;
+        height: 292px;
+        margin-left: 20px;
+        background: url(img5.png);
+    }
+    /* Red triangle top left */
+    .triangleRed {
+        position: relative;
+        width: 0;
+        height: 0;
+        border-top: 130px solid red;
+        border-right: 130px solid transparent;
+    }
+    .triangleText {
+        position: relative;
+        left: 8px;
+        top: -120px;
+        font-family: 'Poppins';
+        font: medium;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 104%;
+        color: #FFFFFF;
+    }
+    .triangleTextBig {
+        position: relative;
+        left: 8px;
+        top: -120px;
+        font-family: 'Poppins';
+        font: bold;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 104%;
+        color: #FFFFFF;
+    }
+    /* Change mouse pointer on hover */
+    .hover:hover {
+        cursor: pointer;
+    }
+    .footerTextPos {
+        position: relative;
+        top: 10px
+    }
+    .cardFooter {
+        height: 62px;
+        font-family: 'Poppins';
+        font: medium;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: center;
+        color: #000000;
+        background: #F4F4F4;
+    }
+
+    .mrgLeft20{
+        margin-left: 20px;
+    }
+    /* Card animation while mouse hover */
+    .imgHover {
+        transition: 0.3s ease-in-out;
+    }
+    .imgHover:hover {
+        transition: 0.3s ease-in-out;
+        transform: translate(-10px, -10px);
+        box-shadow: 12px 12px 0px rgba(243, 211, 213, 0.5);
+    }
+</style>
+
+<body>
+            <!-- ****** Main HTML ****** -->
+
+    <!--  Slick Carusel  -->
+    <div class="slider1">
+        <div>
+            <img class="img2" style="height: 576px !important; width: 934px; margin-left: 20px;" src="2img.jfif">
+<div class="imgText1">
+    <div class="innerbox1">
+        <div class="imgTextHead1">Picnic Tote Bag</div>
+        <div class="imgTextBody">Insoolated Cooler - 4 colors</div>
+        <div class="imgTextPrice">
+            $18.99
+            <span class="material-symbols-outlined">
+                arrow_forward
+            </span>
+        </div>
+    </div>
+</div>
+        </div>
+        <div><img class="img3" style="height: 576px !important; width: 574px; margin-left: 20px;" src="3img.jfif"></div>
+        <div><img class="img1" style="height: 576px !important; width: 451px; margin-left: 20px;" src="1img.png"></div>
+    </div>
+    <!-- Image text box -->
+    
+    <!-- Ad on top the carusel -->
+    <div class="card1">
+        <div class="innercard1">
+            New <br> Products <br> Every Time
+            <div class="text1">
+                Looking for electronics, jewelry or any<br>other type of goods? We have the<br>best deal in the market!
+            </div>
+        </div>
+    </div>
+    <button class="btn1">Shop Now</button>
+    <!-- Deals section -->
+    <div class="deals">
+        Limited-time deals
+    </div>
+    <div class="dealCards">
+        <div class="cardFull hover imgHover">
+            <div class="homeCard">
+                <div class="triangleRed"></div>
+                <div class="triangleText">extra</div>
+                <div class="triangleTextBig">25%</div>
+                <div class="triangleText">off</div>
+            </div>
+            <!--  -->
+            <div class="cardFooter" style="width: 411px;">
+                <div class="footerTextPos">
+                    Home
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="cardFull hover imgHover">
+            <div class="jewleryCard">
+                <div class="triangleRed"></div>
+                <div class="triangleText">extra</div>
+                <div class="triangleTextBig">25%</div>
+                <div class="triangleText">off</div>
+            </div>
+            <!--  -->
+            <div class="cardFooter mrgLeft20" style="width: 237px;">
+                <div class="footerTextPos">Jewlery</div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="cardFull hover imgHover">
+            <div class="lifestyleCard">
+                <div class="triangleRed"></div>
+                <div class="triangleText">extra</div>
+                <div class="triangleTextBig">25%</div>
+                <div class="triangleText">off</div>
+            </div>
+            <!--  -->
+            <div class="cardFooter mrgLeft20" style="width: 410px;">
+                <div class="footerTextPos">Lifestyle</div>
+            </div>
+        </div>
+        <!--  -->
+        <div class="cardFull hover imgHover">
+            <div class="kidsCard">
+                <div class="triangleRed"></div>
+                <div class="triangleText">extra</div>
+                <div class="triangleTextBig">25%</div>
+                <div class="triangleText">off</div>
+            </div>
+            <!--  -->
+            <div class="cardFooter mrgLeft20" style="width: 237px;">
+                <div class="footerTextPos">Kids</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Imports -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- Carusel initialize -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider1').slick({
+                arrows: false,
+                infinite: true,
+                useCSS: true,
+                slidesToShow: 2,
+                centerMode: true,
+                variableWidth: true,
+                dots: true,
+            });
+        });
+    </script>
+</body>
+</html>
